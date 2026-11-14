@@ -1,0 +1,261 @@
+/*
+ * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
+ * Fonts are loaded via <link> in src/routes/__root.tsx.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * BOON Welfare Foundation design system.
+ * Primary palette comes from the BOON emblem (azure -> aqua gradient).
+ * Accent palette comes from the Taiba College logo (gold, green, pink, sky).
+ */
+
+@theme inline {
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-boon-azure: var(--boon-azure);
+  --color-boon-aqua: var(--boon-aqua);
+  --color-boon-sky: var(--boon-sky);
+  --color-navy: var(--navy);
+  --color-navy-soft: var(--navy-soft);
+  --color-navy-foreground: var(--navy-foreground);
+  --color-taiba-gold: var(--taiba-gold);
+  --color-taiba-green: var(--taiba-green);
+  --color-taiba-pink: var(--taiba-pink);
+  --color-taiba-sky: var(--taiba-sky);
+  --color-tint: var(--tint);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* Brand */
+  --boon-azure: oklch(0.67 0.18 251);
+  --boon-aqua: oklch(0.79 0.14 182);
+  --boon-sky: oklch(0.69 0.13 233);
+  --navy: oklch(0.21 0.055 256);
+  --navy-soft: oklch(0.28 0.06 255);
+  --navy-foreground: oklch(0.97 0.01 230);
+  --taiba-gold: oklch(0.8 0.15 78);
+  --taiba-green: oklch(0.45 0.12 143);
+  --taiba-pink: oklch(0.63 0.23 357);
+  --taiba-sky: oklch(0.71 0.12 235);
+  --tint: oklch(0.965 0.02 220);
+
+  --background: oklch(0.992 0.003 230);
+  --foreground: oklch(0.22 0.045 256);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.045 256);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.045 256);
+  --primary: oklch(0.58 0.17 252);
+  --primary-foreground: oklch(0.99 0.005 230);
+  --secondary: oklch(0.95 0.035 195);
+  --secondary-foreground: oklch(0.3 0.07 230);
+  --muted: oklch(0.965 0.01 230);
+  --muted-foreground: oklch(0.48 0.035 250);
+  --accent: oklch(0.8 0.15 78);
+  --accent-foreground: oklch(0.22 0.045 256);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.91 0.018 230);
+  --input: oklch(0.91 0.018 230);
+  --ring: oklch(0.67 0.18 251);
+
+  --gradient-boon: linear-gradient(135deg, var(--boon-azure) 0%, var(--boon-aqua) 100%);
+  --gradient-boon-vertical: linear-gradient(180deg, var(--boon-azure) 0%, var(--boon-aqua) 100%);
+  --gradient-navy: linear-gradient(160deg, var(--navy) 0%, var(--navy-soft) 100%);
+  --gradient-hero: radial-gradient(60% 70% at 85% 30%, color-mix(in oklab, var(--boon-aqua) 22%, transparent) 0%, transparent 70%),
+    radial-gradient(50% 60% at 60% 80%, color-mix(in oklab, var(--boon-azure) 16%, transparent) 0%, transparent 70%),
+    linear-gradient(180deg, var(--background) 0%, var(--tint) 100%);
+
+  --shadow-soft: 0 10px 40px -18px color-mix(in oklab, var(--navy) 35%, transparent);
+  --shadow-lift: 0 24px 60px -24px color-mix(in oklab, var(--boon-azure) 45%, transparent);
+  --shadow-glow: 0 0 80px 10px color-mix(in oklab, var(--boon-aqua) 30%, transparent);
+
+  --chart-1: var(--boon-azure);
+  --chart-2: var(--boon-aqua);
+  --chart-3: var(--taiba-gold);
+  --chart-4: var(--taiba-pink);
+  --chart-5: var(--taiba-green);
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.129 0.042 264.695);
+  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.968 0.007 247.896);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar-ring: oklch(0.704 0.04 256.788);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility bg-gradient-boon {
+  background-image: var(--gradient-boon);
+}
+
+@utility bg-gradient-boon-vertical {
+  background-image: var(--gradient-boon-vertical);
+}
+
+@utility bg-gradient-navy {
+  background-image: var(--gradient-navy);
+}
+
+@utility bg-gradient-hero {
+  background-image: var(--gradient-hero);
+}
+
+@utility text-gradient-boon {
+  background-image: var(--gradient-boon);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+@utility shadow-lift {
+  box-shadow: var(--shadow-lift);
+}
+
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+/* Hexagon clip echoing the BOON emblem */
+@utility clip-hex {
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+}
+
+/* Subtle honeycomb texture */
+@utility bg-hex-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='98' viewBox='0 0 56 98'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34L28 66zm0 32L0 82V66l28 16 28-16v16L28 98z' fill='none' stroke='%2329a9e0' stroke-opacity='0.12' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 56px 98px;
+}
+
+@utility bg-hex-pattern-light {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='98' viewBox='0 0 56 98'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34L28 66zm0 32L0 82V66l28 16 28-16v16L28 98z' fill='none' stroke='%23ffffff' stroke-opacity='0.07' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 56px 98px;
+}
+
+@utility eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+@utility animate-spin-slow {
+  animation: spin-slow 60s linear infinite;
+}
+
+@utility animate-rise-in {
+  animation: rise-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
