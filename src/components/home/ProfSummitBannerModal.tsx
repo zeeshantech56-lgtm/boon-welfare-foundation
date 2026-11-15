@@ -92,6 +92,11 @@ export function ProfSummitBannerModal({
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <img
+                src="/images/prof-summit-logo.png"
+                alt="Prof Summit Logo"
+                style={{ height: 22, width: "auto", objectFit: "contain" }}
+              />
               <span
                 style={{
                   background: "#ffeb3b",
@@ -216,18 +221,25 @@ export function ProfSummitBannerModal({
             </div>
 
             {/* Title */}
-            <h2
-              id="summit-modal-title"
-              style={{
-                fontFamily: "var(--font-display, sans-serif)",
-                fontSize: "clamp(28px, 4.5vw, 38px)",
-                lineHeight: 1.1,
-                margin: "0 0 8px 0",
-                color: "#ffffff",
-              }}
-            >
-              PROF SUMMIT ’26
-            </h2>
+            <div style={{ display: "flex", alignItems: "center", gap: 14, margin: "0 0 8px 0" }}>
+              <img
+                src="/images/prof-summit-logo.png"
+                alt="Prof Summit Logo"
+                style={{ height: 44, width: "auto", objectFit: "contain" }}
+              />
+              <h2
+                id="summit-modal-title"
+                style={{
+                  fontFamily: "var(--font-display, sans-serif)",
+                  fontSize: "clamp(26px, 4.5vw, 36px)",
+                  lineHeight: 1.1,
+                  margin: 0,
+                  color: "#ffffff",
+                }}
+              >
+                PROF SUMMIT ’26
+              </h2>
+            </div>
             <p style={{ color: "#ffeb3b", fontSize: "15px", fontWeight: 700, margin: "0 0 16px 0" }}>
               A Complete Guidance from Character to Career
             </p>
