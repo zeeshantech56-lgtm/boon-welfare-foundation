@@ -274,51 +274,42 @@ export function ProfSummitBannerModal({
             </div>
 
             {/* CTA */}
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 8 }}>
               <Button
                 asChild
                 style={{
                   background: "#ffeb3b",
                   color: "#1f0438",
                   fontWeight: 900,
-                  fontSize: "13px",
-                  height: 46,
-                  flex: 1,
-                  borderRadius: 2,
+                  fontSize: "14px",
+                  height: 50,
+                  width: "100%",
+                  borderRadius: 3,
+                  boxShadow: "0 6px 18px rgba(255, 235, 59, 0.25)",
                 }}
               >
-                <a href={`${summitUrl}/#register`} target="_blank" rel="noreferrer">
-                  Register For Free Seat <ArrowRight size={15} style={{ marginLeft: 6 }} />
+                <a href={`${summitUrl}/#register`} target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "100%", textDecoration: "none" }}>
+                  Register For Free Seat <ArrowRight size={16} style={{ marginLeft: 8 }} />
                 </a>
               </Button>
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
                 style={{
-                  background: "rgba(255,255,255,0.08)",
-                  border: "1px solid rgba(255,255,255,0.25)",
-                  color: "#ffffff",
-                  fontWeight: 800,
-                  fontSize: "13px",
-                  height: 46,
-                  padding: "0 22px",
-                  borderRadius: 2,
+                  background: "transparent",
+                  border: 0,
+                  color: "rgba(255,255,255,0.65)",
+                  fontWeight: 600,
+                  fontSize: "12px",
+                  padding: "6px",
                   cursor: "pointer",
-                  transition: "all 0.2s ease",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
+                  textAlign: "center",
+                  transition: "color 0.2s ease",
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "rgba(255,255,255,0.18)";
-                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.5)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "rgba(255,255,255,0.08)";
-                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.25)";
-                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#ffffff")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.65)")}
               >
-                Close
+                Close dialog
               </button>
             </div>
           </div>
