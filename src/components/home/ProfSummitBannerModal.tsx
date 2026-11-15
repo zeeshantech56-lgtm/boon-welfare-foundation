@@ -291,18 +291,35 @@ export function ProfSummitBannerModal({
                   Register For Free Seat <ArrowRight size={15} style={{ marginLeft: 6 }} />
                 </a>
               </Button>
-              <Button
-                variant="outline"
+              <button
+                type="button"
                 onClick={() => setIsOpen(false)}
                 style={{
-                  border: "1px solid rgba(255,255,255,0.3)",
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255,255,255,0.25)",
                   color: "#ffffff",
+                  fontWeight: 800,
+                  fontSize: "13px",
                   height: 46,
+                  padding: "0 22px",
                   borderRadius: 2,
+                  cursor: "pointer",
+                  transition: "all 0.2s ease",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "rgba(255,255,255,0.18)";
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.5)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "rgba(255,255,255,0.08)";
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.25)";
                 }}
               >
                 Close
-              </Button>
+              </button>
             </div>
           </div>
         </div>
