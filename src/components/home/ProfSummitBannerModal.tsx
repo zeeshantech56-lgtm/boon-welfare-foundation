@@ -279,7 +279,7 @@ export function ProfSummitBannerModal({
                     Session 02: Prophetic Blueprint
                   </strong>
                   <span style={{ fontSize: "12px", opacity: 0.9 }}>
-                    Dr. Mufti Khalid Ayyub Sahab · Islamic Scholar
+                    Dr. Syed Mohammed Fazlullah Chishti · Islamic Scholar
                   </span>
                 </div>
               </div>
