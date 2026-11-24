@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
+import { Mail, MapPin, Phone, Facebook, Instagram, Youtube, Linkedin, MessageCircle } from "lucide-react";
 
 const QUICK = [
   { label: "About BOON", href: "#about" },
@@ -65,12 +65,30 @@ export function SiteFooter() {
                   <Phone className="mt-0.5 size-4 shrink-0 text-taiba-gold" /> +91 00000 00000
                 </li>
               </ul>
-              <div className="mt-6 flex gap-2">
-                {[Facebook, Instagram, Youtube, Linkedin].map((Icon, i) => (
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <a
+                  href="https://whatsapp.com/channel/0029Vb1y6FMJUM2cn8H5Ll2K"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-300 transition-colors hover:border-emerald-400 hover:bg-emerald-500/20"
+                >
+                  <MessageCircle className="size-3.5" /> Join WhatsApp Channel
+                </a>
+              </div>
+              <div className="mt-4 flex gap-2">
+                {[
+                  { label: "WhatsApp Channel", href: "https://whatsapp.com/channel/0029Vb1y6FMJUM2cn8H5Ll2K", Icon: MessageCircle },
+                  { label: "Facebook", href: "#contact", Icon: Facebook },
+                  { label: "Instagram", href: "#contact", Icon: Instagram },
+                  { label: "YouTube", href: "#contact", Icon: Youtube },
+                  { label: "LinkedIn", href: "#contact", Icon: Linkedin },
+                ].map(({ label, href, Icon }) => (
                   <a
-                    key={i}
-                    href="#contact"
-                    aria-label="Social media"
+                    key={label}
+                    href={href}
+                    target={href.startsWith("http") ? "_blank" : undefined}
+                    rel={href.startsWith("http") ? "noreferrer" : undefined}
+                    aria-label={label}
                     className="grid size-9 place-items-center rounded-full border border-navy-foreground/15 transition-colors hover:border-boon-aqua hover:text-boon-aqua"
                   >
                     <Icon className="size-4" />
