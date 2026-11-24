@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Facebook, Instagram, Youtube, Linkedin, MessageCircle } from "lucide-react";
+import { Mail, MapPin, Phone, Instagram, Youtube, Linkedin, MessageCircle } from "lucide-react";
 
 const QUICK = [
   { label: "About BOON", href: "#about" },
@@ -62,7 +62,10 @@ export function SiteFooter() {
                   <Mail className="mt-0.5 size-4 shrink-0 text-taiba-gold" /> info@boonfoundation.org
                 </li>
                 <li className="flex gap-3">
-                  <Phone className="mt-0.5 size-4 shrink-0 text-taiba-gold" /> +91 00000 00000
+                  <Phone className="mt-0.5 size-4 shrink-0 text-taiba-gold" />
+                  <a href="tel:+919111655720" className="hover:text-white transition-colors">
+                    +91 91116 55720
+                  </a>
                 </li>
               </ul>
               <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -77,19 +80,39 @@ export function SiteFooter() {
               </div>
               <div className="mt-4 flex gap-2">
                 {[
-                  { label: "WhatsApp Channel", href: "https://whatsapp.com/channel/0029Vb1y6FMJUM2cn8H5Ll2K", Icon: MessageCircle },
-                  { label: "Facebook", href: "#contact", Icon: Facebook },
-                  { label: "Instagram", href: "#contact", Icon: Instagram },
-                  { label: "YouTube", href: "#contact", Icon: Youtube },
-                  { label: "LinkedIn", href: "#contact", Icon: Linkedin },
-                ].map(({ label, href, Icon }) => (
+                  {
+                    label: "WhatsApp Channel",
+                    href: "https://whatsapp.com/channel/0029Vb1y6FMJUM2cn8H5Ll2K",
+                    Icon: MessageCircle,
+                    hoverClass: "hover:border-emerald-400 hover:text-emerald-400",
+                  },
+                  {
+                    label: "Instagram",
+                    href: "https://www.instagram.com/the_boon_foundation?psln=MTRwNG81ZXN0OWl5NQ==",
+                    Icon: Instagram,
+                    hoverClass: "hover:border-pink-400 hover:text-pink-400",
+                  },
+                  {
+                    label: "YouTube",
+                    href: "https://youtube.com/@theboonfoundation?si=87DcKUsP0LZnQ-nc",
+                    Icon: Youtube,
+                    hoverClass: "hover:border-red-400 hover:text-red-400",
+                  },
+                  {
+                    label: "LinkedIn",
+                    href: "https://www.linkedin.com/in/the-boon-welfare-foundation/",
+                    Icon: Linkedin,
+                    hoverClass: "hover:border-sky-400 hover:text-sky-400",
+                  },
+                ].map(({ label, href, Icon, hoverClass }) => (
                   <a
                     key={label}
                     href={href}
-                    target={href.startsWith("http") ? "_blank" : undefined}
-                    rel={href.startsWith("http") ? "noreferrer" : undefined}
+                    target="_blank"
+                    rel="noreferrer"
                     aria-label={label}
-                    className="grid size-9 place-items-center rounded-full border border-navy-foreground/15 transition-colors hover:border-boon-aqua hover:text-boon-aqua"
+                    title={label}
+                    className={`grid size-9 place-items-center rounded-full border border-navy-foreground/15 transition-colors ${hoverClass}`}
                   >
                     <Icon className="size-4" />
                   </a>

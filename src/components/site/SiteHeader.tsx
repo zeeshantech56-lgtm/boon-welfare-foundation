@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Mail, MapPin } from "lucide-react";
+import { Menu, X, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -32,6 +32,9 @@ export function SiteHeader() {
             <span className="flex items-center gap-1.5">
               <MapPin className="size-3.5" /> Indore, Madhya Pradesh
             </span>
+            <a href="tel:+919111655720" className="flex items-center gap-1.5 hover:opacity-100">
+              <Phone className="size-3.5" /> +91 91116 55720
+            </a>
             <a href="#contact" className="flex items-center gap-1.5 hover:opacity-100">
               <Mail className="size-3.5" /> Contact us
             </a>
