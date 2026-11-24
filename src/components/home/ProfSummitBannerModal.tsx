@@ -95,7 +95,7 @@ export function ProfSummitBannerModal({
               <img
                 src="/images/prof-summit-logo.png"
                 alt="Prof Summit Logo"
-                style={{ height: 22, width: "auto", objectFit: "contain" }}
+                style={{ height: 32, width: "auto", objectFit: "contain" }}
               />
               <span
                 style={{
@@ -225,7 +225,7 @@ export function ProfSummitBannerModal({
               <img
                 src="/images/prof-summit-logo.png"
                 alt="Prof Summit Logo"
-                style={{ height: 44, width: "auto", objectFit: "contain" }}
+                style={{ height: 56, width: "auto", objectFit: "contain" }}
               />
               <h2
                 id="summit-modal-title"
