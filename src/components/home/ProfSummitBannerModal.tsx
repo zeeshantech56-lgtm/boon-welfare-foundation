@@ -256,7 +256,7 @@ export function ProfSummitBannerModal({
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: "13px" }}>
                 <MapPin size={16} color="#ffeb3b" />
-                <span>Star Hall, Manik Bagh Road, Indore, MP</span>
+                <span>FRK Hall, Indore, MP</span>
               </div>
             </div>
 
